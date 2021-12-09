@@ -1,0 +1,22 @@
+body{
+  background: url("https://external-preview.redd.it/fAFhf9OlRFN2oUUTJ9S5D4Q4CHwi4NooAiFIOkt0F-Q.png?format=pjpg&auto=webp&s=86755d7179944b94c411704b4bed448b0dd5727e");
+  color: white;
+  font: Serif;
+  outline-color: green;
+  height: 200px;
+  width: 50%;
+  background-color: powderblue;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+h1 {
+  background-color: white;
+  color: blue;
+  opacity: 0.5;
+}
+.poopy {
+  background-color: skyblue;
+  color: white;
+}
