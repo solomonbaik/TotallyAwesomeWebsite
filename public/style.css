@@ -37,7 +37,7 @@ body {
 }
 
 .clicked {
-  filter: brightness(85%);
+  filter: brightness(200%);
 }
 
 .buttonclass1 {
@@ -46,9 +46,6 @@ body {
   width: 200px;
 } /* Green */
 
-.buttonclass1:active {
-  filter: brightness(200%);
-}
 
 .buttonclass2 {
   background-color: #0000ff;
@@ -56,26 +53,15 @@ body {
   width: 200px;
 } /* Blue */
 
-.buttonclass2:active {
-  filter: brightness(200%);
-}
-
 .buttonclass3 {
   background-color: #ff0000;
   height: 200px;
   width: 200px;
 } /* Red */
 
-.buttonclass3:active {
-  filter: brightness(200%);
-}
 
 .buttonclass4 {
   background-color: #ffff00;
   height: 200px;
   width: 200px;
 } /* Yellow */
-
-.buttonclass4:active {
-  filter: brightness(200%);
-}
