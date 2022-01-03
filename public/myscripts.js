@@ -2,6 +2,8 @@ var derp = "DERP";
 var derp = 3 + 'derp';
 console.log(derp);
 
+var moves = [Math.floor(Math.random() * (4 + 1))];
+
 function exampleFunction(){
   console.log('example method');
   var element = document.getElementById("button1");
@@ -11,6 +13,8 @@ function exampleFunction(){
 document.getElementById("button1").addEventListener("click", function() {
   document.getElementById("button1").classList.add("mystyle");
   console.log("lol 1");
+  console.log(document.getElementById("button1").classList);
+  console.log(moves);
 });
 
 document.getElementById("button2").addEventListener("click", function() {

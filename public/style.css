@@ -36,23 +36,46 @@ body {
   background-color: white;
 }
 
+.clicked {
+  filter: brightness(85%);
+}
+
 .buttonclass1 {
   background-color: #008000;
   height: 200px;
   width: 200px;
-  } /* Green */
+} /* Green */
+
+.buttonclass1:active {
+  filter: brightness(200%);
+}
+
 .buttonclass2 {
   background-color: #0000ff;
   height: 200px;
   width: 200px;
-  } /* Blue */
+} /* Blue */
+
+.buttonclass2:active {
+  filter: brightness(200%);
+}
+
 .buttonclass3 {
   background-color: #ff0000;
   height: 200px;
   width: 200px;
-  } /* Red */
+} /* Red */
+
+.buttonclass3:active {
+  filter: brightness(200%);
+}
+
 .buttonclass4 {
   background-color: #ffff00;
   height: 200px;
   width: 200px;
 } /* Yellow */
+
+.buttonclass4:active {
+  filter: brightness(200%);
+}
