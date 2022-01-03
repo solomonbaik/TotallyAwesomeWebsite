@@ -2,12 +2,15 @@ var derp = "DERP";
 var derp = 3 + 'derp';
 console.log(derp);
 
-var moves = [Math.floor(Math.random() * (4 + 1))];
+var moves = [Math.floor(Math.random() * (4)) + 1];
+var turn = 0;
+var size = 1;
 
-function exampleFunction(){
-  console.log('example method');
-  var element = document.getElementById("button1");
-  element.classList.add("mystyle");
+function lightUp(number){
+  var id = "button" + number;
+  var element = document.getElementById(id);
+  element.classList.add("clicked");
+  setTimeout(() => {lightDown(element)}, 1000);
 }
 
 function lightDown(element) {
@@ -15,40 +18,121 @@ function lightDown(element) {
   element.classList.remove("clicked");
 }
 
-document.getElementById("button1").addEventListener("click", function() {
-  var element = document.getElementById("button1");
-  element.classList.add("clicked");
-  setTimeout(() => {lightDown(element)}, 1000);
-  console.log("lol 1");
-  console.log(document.getElementById("button1").classList);
+function callLightUp(number){
+  setTimeout(() => {lightUp(moves[number])}, (number + 2) * 2000);
+}
+
+function displayMoves(){
+  for (var i = 0; i < moves.length; i++) {
+    callLightUp(i);
+  }
+}
+
+document.getElementById("button0").addEventListener("click", function(){
+  moves = [Math.floor(Math.random() * (4)) + 1];
+  size = 1;
+  turn = 0;
+  displayMoves();
+});
+
+document.getElementById("button1").addEventListener("click", function(){
   console.log(moves);
+  lightUp(1);
+  turn++;
+  if(turn >= size){
+    //1 update moves size and player turn variables
+    size++;
+    turn = 0;
+    console.log("moving on to level " + size);
+    //2 update moves array
+    moves.push(Math.floor(Math.random() * (4)) + 1);
+    //3
+    //display new moves array
+    displayMoves();
+  }else{
+    if(moves[turn - 1] != 1){
+      console.log("you lose");
+      moves = [Math.floor(Math.random() * (4)) + 1];
+      turn = 0; size = 1;
+    }else{
+      console.log('good');
+    }
+  }
 });
 
 document.getElementById("button2").addEventListener("click", function() {
   //document.getElementById("demo").innerHTML = "You Lost";
-  var element = document.getElementById("button2");
-  element.classList.add("clicked");
-  setTimeout(() => {lightDown(element)}, 1000);
-  console.log("lol 2");
-
+  lightUp(2);
+  turn++;
+  if(turn >= size){
+    //1 update moves size and player turn variables
+    size++;
+    turn = 0;
+    console.log("moving on to level " + size);
+    //2 update moves array
+    moves.push(Math.floor(Math.random() * (4)) + 1);
+    //3
+    //display new moves array
+    displayMoves();
+  }else{
+    if(moves[turn - 1] != 2){
+      console.log("you lose");
+      moves = [Math.floor(Math.random() * (4)) + 1];
+      turn = 0; size = 1;
+    }else{
+      console.log('good');
+    }
+  }
 });
 
 document.getElementById("button3").addEventListener("click", function() {
   //document.getElementById("demo").innerHTML = "You Lost";
-  var element = document.getElementById("button3");
-  element.classList.add("clicked");
-  setTimeout(() => {lightDown(element)}, 1000);
-  console.log("lol 3");
-
+  lightUp(3);
+  turn++;
+  if(turn >= size){
+    //1 update moves size and player turn variables
+    size++;
+    turn = 0;
+    console.log("moving on to level " + size);
+    //2 update moves array
+    moves.push(Math.floor(Math.random() * (4)) + 1);
+    //3
+    //display new moves array
+    displayMoves();
+  }else{
+    if(moves[turn - 1] != 3){
+      console.log("you lose");
+      moves = [Math.floor(Math.random() * (4)) + 1];
+      turn = 0; size = 1;
+    }else{
+      console.log('good');
+    }
+  }
 });
 
 document.getElementById("button4").addEventListener("click", function() {
   //document.getElementById("demo").innerHTML = "You Lost";
-  var element = document.getElementById("button4");
-  element.classList.add("clicked");
-  setTimeout(() => {lightDown(element)}, 1000);
-  console.log("lol 4");
-
+  lightUp(4);
+  turn++;
+  if(turn >= size){
+    //1 update moves size and player turn variables
+    size++;
+    turn = 0;
+    console.log("moving on to level " + size);
+    //2 update moves array
+    moves.push(Math.floor(Math.random() * (4)) + 1);
+    //3
+    //display new moves array
+    displayMoves();
+  }else{
+    if(moves[turn - 1] != 4){
+      console.log("you lose");
+      moves = [Math.floor(Math.random() * (4)) + 1];
+      turn = 0; size = 1;
+    }else{
+      console.log('good');
+    }
+  }
 });
 
 const arr = [];
