@@ -37,31 +37,31 @@ body {
 }
 
 .clicked {
-  filter: brightness(200%);
+  filter: brightness(150%);
 }
 
 .buttonclass1 {
-  background-color: #008000;
+  background-color: #4CBB17;
   height: 200px;
   width: 200px;
 } /* Green */
 
 
 .buttonclass2 {
-  background-color: #0000ff;
+  background-color: #87CEEB;
   height: 200px;
   width: 200px;
 } /* Blue */
 
 .buttonclass3 {
-  background-color: #ff0000;
+  background-color: #fd5c63;
   height: 200px;
   width: 200px;
 } /* Red */
 
 
 .buttonclass4 {
-  background-color: #ffff00;
+  background-color: #FFBF00;
   height: 200px;
   width: 200px;
 } /* Yellow */
