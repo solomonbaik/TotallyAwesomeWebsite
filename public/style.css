@@ -1,12 +1,25 @@
-h2 {
-  background-color: transparent;
+.instructions {
+  font-style: bold;
+  font-size: 28;
+}
+
+#linkcss {
+  background-color: pink;
   color: blue;
+  width: 500px;
 }
 
 .video {
-  float: left;
   padding-right: 30px;
   padding-bottom: 50px;
+}
+
+.everything {
+  display: flex;
+}
+
+.videotext {
+  width: 500px;
 }
 
 body {
@@ -22,22 +35,31 @@ body {
 
 .text-stuff {
   color: white;
-  width: 600px;
+  width: 500px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: cursive;
+  position: relative;
+  background-color: pink;
 }
 
-.scorestuff {
-  
+.score {
+  float: left;
+}
+
+.simoncss {
+  color: black;
 }
 
 .SimonSays {
-  height: 420px;
-  width: 420px;
-  float: left;
+  height: 520px;
+  width: 440px;
   padding-right: 30px;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
   padding-left: 70px;
   color: black;
-  background-color: white;
+  background-color: pink;
+  margin-left: 50px;
 }
 
 .clicked {

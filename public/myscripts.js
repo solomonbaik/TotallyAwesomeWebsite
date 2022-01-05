@@ -11,7 +11,7 @@ function lightUp(number){
   var id = "button" + number;
   var element = document.getElementById(id);
   element.classList.add("clicked");
-  setTimeout(() => {lightDown(element)}, 1000);
+  setTimeout(() => {lightDown(element)}, 500);
 }
 
 function lightDown(element) {
@@ -20,7 +20,7 @@ function lightDown(element) {
 }
 
 function callLightUp(number){
-  setTimeout(() => {lightUp(moves[number])}, (number + 2) * 2000);
+  setTimeout(() => {lightUp(moves[number])}, (number + 2) * 1000);
 }
 
 function displayMoves(){
@@ -35,123 +35,61 @@ document.getElementById("button0").addEventListener("click", function(){
   size = 1;
   turn = 0;
   document.getElementById("score").innerHTML = size - 1;
+  document.getElementById("highScore").innerHTML = window.localStorage.highScore;
   displayMoves();
 });
 
-document.getElementById("button1").addEventListener("click", function(){
+function reset() {
+  window.location.replace('https://google.com');
+  moves = [Math.floor(Math.random() * (4)) + 1];
+  turn = 0; size = 1;
+  play = false;
+}
+
+function advance() {
+  //1 update moves size and player turn variables
+  size++;
+  turn = 0;
+  console.log("moving on to level " + size);
+  //2 update moves array
+  moves.push(Math.floor(Math.random() * (4)) + 1);
+  //3 display new moves array
+  document.getElementById("score").innerHTML = size - 1;
+  //4 update high Score
+  if(size - 1 > window.localStorage.highScore){
+    window.localStorage.highScore = document.getElementById("score").innerHTML; //size - 1
+  }
+  document.getElementById("highScore").innerHTML = window.localStorage.highScore;
+  displayMoves();
+}
+
+function activateButton(num){
   if(play == true){
-    console.log(moves);
-    //document.getElementById("demo").innerHTML = "You Lost";
-    lightUp(1);
-    if(moves[turn] != 1){
-      window.location.replace('https://google.com');
-      moves = [Math.floor(Math.random() * (4)) + 1];
-      turn = 0; size = 1;
-      play = false;
-    }else{
-      console.log('good');
+    lightUp(num);
+    if(moves[turn] != num){
+      reset();
     }
     turn++;
     if(turn >= size){
-      //1 update moves size and player turn variables
-      size++;
-      turn = 0;
-      console.log("moving on to level " + size);
-      //2 update moves array
-      moves.push(Math.floor(Math.random() * (4)) + 1);
-      //3
-      //display new moves array
-      document.getElementById("score").innerHTML = size - 1;
-      displayMoves();
+      advance();
     }
   }
+}
+
+document.getElementById("button1").addEventListener("click", function(){
+  activateButton(1);
 });
 
 document.getElementById("button2").addEventListener("click", function() {
-  if(play == true){
-    console.log(moves);
-    //document.getElementById("demo").innerHTML = "You Lost";
-    lightUp(2);
-    if(moves[turn] != 2){
-      window.location.replace('https://google.com');
-      moves = [Math.floor(Math.random() * (4)) + 1];
-      turn = 0; size = 1;
-      play = false;
-    }else{
-      console.log('good');
-    }
-    turn++;
-    if(turn >= size){
-      //1 update moves size and player turn variables
-      size++;
-      turn = 0;
-      console.log("moving on to level " + size);
-      //2 update moves array
-      moves.push(Math.floor(Math.random() * (4)) + 1);
-      //3
-      //display new moves array
-      document.getElementById("score").innerHTML = size - 1;
-      displayMoves();
-    }
-  }
+  activateButton(2);
 });
 
 document.getElementById("button3").addEventListener("click", function() {
-  if(play == true){
-    console.log(moves);
-    //document.getElementById("demo").innerHTML = "You Lost";
-    lightUp(3);
-    if(moves[turn] != 3){
-      window.location.replace('https://google.com');
-      moves = [Math.floor(Math.random() * (4)) + 1];
-      turn = 0; size = 1;
-      play = false;
-    }else{
-      console.log('good');
-    }
-    turn++;
-    if(turn >= size){
-      //1 update moves size and player turn variables
-      size++;
-      turn = 0;
-      console.log("moving on to level " + size);
-      //2 update moves array
-      moves.push(Math.floor(Math.random() * (4)) + 1);
-      //3
-      //display new moves array
-      document.getElementById("score").innerHTML = size - 1;
-      displayMoves();
-    }
-  }
+  activateButton(3);
 });
 
 document.getElementById("button4").addEventListener("click", function() {
-  if(play == true){
-    console.log(moves);
-    //document.getElementById("demo").innerHTML = "You Lost";
-    lightUp(4);
-    if(moves[turn] != 4){
-      window.location.replace('https://google.com');
-      moves = [Math.floor(Math.random() * (4)) + 1];
-      turn = 0; size = 1;
-      play = false;
-    }else{
-      console.log('good');
-    }
-    turn++;
-    if(turn >= size){
-      //1 update moves size and player turn variables
-      size++;
-      turn = 0;
-      console.log("moving on to level " + size);
-      //2 update moves array
-      moves.push(Math.floor(Math.random() * (4)) + 1);
-      //3
-      //display new moves array
-      document.getElementById("score").innerHTML = size - 1;
-      displayMoves();
-    }
-  }
+  activateButton(4);
 });
 
 const arr = [];

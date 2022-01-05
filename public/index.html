@@ -2,73 +2,54 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
-    <h2>
+    <h2 id = "linkcss">
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click this link for fun!</a>
     </h2>
   </head>
 
   <body>
+    <div class = "everything">
 
-    <div class = "video">
-      <iframe width="500" height="350" src="https://www.youtube.com/embed/AZals4U6Z_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    <div class = "SimonSays">
-    <h3>Simon Says!
-      <button class = "play buttonclass0" id = "button0">
-        Play!
-      </button>
-        Score:
-        <h4 id = "score">  </h4>
-    </h3>
-      <button class = "green buttonclass1" id = "button1">
-        Green Button!
-      </button>
-      <button class = "blue buttonclass2" id = "button2">
-        Blue Button!
-      </button>
-      <button class = "red buttonclass3" id = "button3">
-        Red Button!
-      </button>
-      <button class = "yellow buttonclass4" id = "button4">
-        Yellow Button!
-      </button>
-    </div>
-
-
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-
-    <div class = "text-stuff">
-      <p>HELLO WORLD BABEY :)))))</p>
-        <p>
-        Playing a YouTube Video in HTML
-        To play your video on a web page, do the following:
-
-        Upload the video to YouTube
-        Take a note of the video id
-        Define an element in your web page
-        Let the src attribute point to the video URL
-        Use the width and height attributes to specify the dimension of the player
-        Add any other parameters to the URL (see below)
-      </p>
-    </div>
-
-
-    <li>111111<li>
-    <ol>1!1!1!1<ol>
-    <ul>!!!!!!!<ul>
-      <br>
-      <ul> ofosjfoasdf<ul>
-
-        <div class = "peepee">
-          <p> a;lsdkfja;lsdkfjas;ldkfja;lsdkfj</p>
+      <div class = "videotext">
+        <div class = "video">
+          <iframe width="500" height="350" src="https://www.youtube.com/embed/AZals4U6Z_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class = "balls">
-          <p> f</p>
+
+        <div class = "text-stuff">
+          <p class = "instructions">INSTRUCTIONS:</p>
+          <ol>
+            <li>Click the link.</li>
+            <li>Play the YouTube video. Sit back and relax. Volume Up.</li>
+            <li><a href="https://www.youtube.com/watch?v=EWJ5uYwQJGU">Instructions to play Simon Says!™</a> if you need them.</li>
+            <li>Please enjoy I spent days making this website work.</li>
+          </ol>
         </div>
+      </div>
+
+      <div class = "SimonSays">
+      <h2 id = "simoncss">Simon Says!
+        <button class = "play buttonclass0" id = "button0">
+          Play!
+        </button>
+        <h3>Highest Score: <span id="highScore"></span></h3>
+        <h3>Score: <span id="score"></span></h3>
+      </h2>
+        <button class = "green buttonclass1" id = "button1">
+          Green Button!
+        </button>
+        <button class = "blue buttonclass2" id = "button2">
+          Blue Button!
+        </button>
+        <button class = "red buttonclass3" id = "button3">
+          Red Button!
+        </button>
+        <button class = "yellow buttonclass4" id = "button4">
+          Yellow Button!
+        </button>
+      </div>
+
+    </div>
+
   </body>
 
 
