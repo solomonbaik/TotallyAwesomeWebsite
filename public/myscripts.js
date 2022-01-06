@@ -6,7 +6,6 @@ var moves = [Math.floor(Math.random() * (4)) + 1];
 var turn = 0;
 var size = 1;
 var play = false;
-window.localStorage.highScore = 0;
 
 function lightUp(number){
   var id = "button" + number;
