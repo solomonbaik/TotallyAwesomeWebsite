@@ -35,7 +35,8 @@ document.getElementById("button0").addEventListener("click", function(){
   size = 1;
   turn = 0;
   document.getElementById("score").innerHTML = size - 1;
-  document.getElementById("highScore").innerHTML = window.localStorage.highScore;
+  if(window.localStorage.highScore != null)
+    document.getElementById("highScore").innerHTML = window.localStorage.highScore;
   displayMoves();
 });
 
