@@ -6,6 +6,7 @@ var moves = [Math.floor(Math.random() * (4)) + 1];
 var turn = 0;
 var size = 1;
 var play = false;
+window.localStorage.highScore = 0;
 
 function lightUp(number){
   var id = "button" + number;
@@ -35,8 +36,7 @@ document.getElementById("button0").addEventListener("click", function(){
   size = 1;
   turn = 0;
   document.getElementById("score").innerHTML = size - 1;
-  if(window.localStorage.highScore != null)
-    document.getElementById("highScore").innerHTML = window.localStorage.highScore;
+  document.getElementById("highScore").innerHTML = window.localStorage.highScore;
   displayMoves();
 });
 
