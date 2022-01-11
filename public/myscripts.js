@@ -7,6 +7,11 @@ var turn = 0;
 var size = 1;
 var play = false;
 
+if(window.localStorage.highScore == "undefined"){
+  window.localStorage.highScore = 0;
+}
+document.getElementById("highScore").innerHTML = window.localStorage.highScore;
+
 function lightUp(number){
   var id = "button" + number;
   var element = document.getElementById(id);
@@ -56,13 +61,10 @@ function advance() {
   //3 display new moves array
   document.getElementById("score").innerHTML = size - 1;
   //4 update high Score
-  if(typeof window.localStorage.highScore === "undefined"){
-    window.localStorage.highScore = 0;
-  }
   if(size - 1 > window.localStorage.highScore){
     window.localStorage.highScore = document.getElementById("score").innerHTML; //size - 1
+    document.getElementById("highScore").innerHTML = window.localStorage.highScore;
   }
-  document.getElementById("highScore").innerHTML = window.localStorage.highScore;
   displayMoves();
 }
 
