@@ -56,6 +56,9 @@ function advance() {
   //3 display new moves array
   document.getElementById("score").innerHTML = size - 1;
   //4 update high Score
+  if(typeof window.localStorage.highScore === "undefined"){
+    window.localStorage.highScore = 0;
+  }
   if(size - 1 > window.localStorage.highScore){
     window.localStorage.highScore = document.getElementById("score").innerHTML; //size - 1
   }
