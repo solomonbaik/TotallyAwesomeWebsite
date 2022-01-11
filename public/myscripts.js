@@ -17,10 +17,31 @@ let SimonGame =
   {
     prepareLightUp: function(number)
     {
-      var id = "button" + number;
+      var id;
+
+      if (number == 1)
+      {
+        var id = "green";
+      }
+
+      if (number == 2)
+      {
+        var id = "blue";
+      }
+
+      if (number == 3)
+      {
+        var id = "red";
+      }
+
+      if (number == 4)
+      {
+        var id = "yellow";
+      }
+
       var element = document.getElementById(id);
       element.classList.add("clicked");
-      setTimeout(() => {lightDown(element)}, 500);
+      setTimeout(() => {SimonGame.boardOptics.lightDown(element)}, 500);
     },
 
     lightDown: function(element)
@@ -30,60 +51,73 @@ let SimonGame =
 
     lightUp: function(number)
     {
-      setTimeout(() => {prepareLightUp(moves[number])}, (number + 2) * 1000);
+      setTimeout(() => {SimonGame.boardOptics.prepareLightUp(moves[number])}, (number + 2) * 1000);
     },
 
     commenceLights: function()
     {
       for (var i = 0; i < moves.length; i++)
       {
-        lightUp(i);
+        SimonGame.boardOptics.lightUp(i);
       }
     },
   },
 
   buttons:
   {
-    document.getElementById("button0").addEventListener("click", function(){
-      play = true;
-      moves = [Math.floor(Math.random() * (4)) + 1];
-      size = 1;
-      turn = 0;
-      document.getElementById("score").innerHTML = size - 1;
-      document.getElementById("highScore").innerHTML = window.localStorage.highScore;
-      displayMoves();
-    }),
+    play : document.getElementById("play"),
 
-    document.getElementById("button1").addEventListener("click", function(){
-      activateButton(1);
-    }),
+    green : document.getElementById("green"),
 
-    document.getElementById("button2").addEventListener("click", function() {
-      activateButton(2);
-    }),
+    blue : document.getElementById("blue"),
 
-    document.getElementById("button3").addEventListener("click", function() {
-      activateButton(3);
-    }),
+    red : document.getElementById("red"),
 
-    document.getElementById("button4").addEventListener("click", function() {
-      activateButton(4);
-    }),
+    yellow : document.getElementById("yellow"),
 
     activateButton: function(num)
     {
       if(play == true){
-        prepareLightUp(num);
+        SimonGame.boardOptics.prepareLightUp(num);
         if(moves[turn] != num){
           reset();
         }
         turn++;
         if(turn >= size){
-          advance();
+          SimonGame.gameSettings.advance();
         }
       }
     },
   },
+
+    buttonActions:
+    {
+      play : function(){
+        play = true;
+        moves = [Math.floor(Math.random() * (4)) + 1];
+        size = 1;
+        turn = 0;
+        document.getElementById("score").innerHTML = size - 1;
+        document.getElementById("highScore").innerHTML = window.localStorage.highScore;
+        SimonGame.boardOptics.commenceLights();
+      },
+
+      green : function(){
+        SimonGame.buttons.activateButton(1);
+      },
+
+      blue : function(){
+        SimonGame.buttons.activateButton(2);
+      },
+
+      red : function(){
+        SimonGame.buttons.activateButton(3);
+      },
+
+      red : function(){
+        SimonGame.buttons.activateButton(4);
+      },
+    },
 
   gameSettings:
   {
@@ -110,7 +144,13 @@ let SimonGame =
         window.localStorage.highScore = document.getElementById("score").innerHTML; //size - 1
       }
       document.getElementById("highScore").innerHTML = window.localStorage.highScore;
-      displayMoves();
+      SimonGame.boardOptics.commenceLights();
     },
   },
-}
+};
+
+SimonGame.buttons.play.addEventListener("click", SimonGame.buttonActions.play);
+SimonGame.buttons.green.addEventListener("click", SimonGame.buttonActions.green);
+SimonGame.buttons.blue.addEventListener("click", SimonGame.buttonActions.blue);
+SimonGame.buttons.red.addEventListener("click", SimonGame.buttonActions.red);
+SimonGame.buttons.yellow.addEventListener("click", SimonGame.buttonActions.yellow);
