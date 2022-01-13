@@ -80,7 +80,7 @@ let SimonGame =
       if(play == true){
         SimonGame.boardOptics.prepareLightUp(num);
         if(moves[turn] != num){
-          reset();
+          SimonGame.gameSettings.reset();
         }
         turn++;
         if(turn >= size){
@@ -114,7 +114,7 @@ let SimonGame =
         SimonGame.buttons.activateButton(3);
       },
 
-      red : function(){
+      yellow : function(){
         SimonGame.buttons.activateButton(4);
       },
     },
@@ -123,7 +123,7 @@ let SimonGame =
   {
     reset: function()
     {
-      window.location.replace('https://google.com');
+      //window.location.replace('https://google.com');
       moves = [Math.floor(Math.random() * (4)) + 1];
       turn = 0; size = 1;
       play = false;
