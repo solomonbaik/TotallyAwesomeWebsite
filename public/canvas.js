@@ -3,12 +3,6 @@ function drawPic(ctx)
   ctx.save();
   //var time2 = new Date();
   //ctx.translate(time2.getSeconds(), 0);
-  //drawing oval
-
-  ctx.beginPath();
-  ctx.moveTo(200,200);
-  ctx.quadraticCurveTo(160,250,200,300);
-  ctx.quadraticCurveTo(240,250,200,200);
   frameNum++;
   frameNum=frameNum%30;
   var translation = 0;
@@ -16,7 +10,16 @@ function drawPic(ctx)
   {
     translation=75
   }
-  ctx.translate(translation, translation);
+  ctx.translate(translation-3*frameNum, translation+frameNum);
+
+
+  //drawing oval
+
+  ctx.beginPath();
+  ctx.moveTo(200,200);
+  ctx.quadraticCurveTo(160,250,200,300);
+  ctx.quadraticCurveTo(240,250,200,200);
+
   ctx.stroke();
 
   ctx.restore();
