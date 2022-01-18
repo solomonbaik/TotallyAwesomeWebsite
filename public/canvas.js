@@ -8,9 +8,9 @@ function drawOval(ctx)
   var translation = 0;
   if (frameNum<16)
   {
-    translation=20;
+    translation=40;
   }
-  ctx.translate(translation-75*(Math.tanh(frameNum/5)), 0);
+  ctx.translate(translation-75*(Math.sin(frameNum/5)), 0);
 
   //drawing oval
   var xTrans = 150;
