@@ -1,4 +1,4 @@
-function drawPic(ctx)
+function drawOval(ctx)
 {
   ctx.save();
   //var time2 = new Date();
@@ -8,17 +8,18 @@ function drawPic(ctx)
   var translation = 0;
   if (frameNum<16)
   {
-    translation=75
+    translation=20;
   }
-  ctx.translate(translation-3*frameNum, translation+frameNum);
+  ctx.translate(translation-75*Math.sin(frameNum/4), 0);
 
 
   //drawing oval
-
+  var xTrans = 150;
+  var yTrans = 200;
   ctx.beginPath();
-  ctx.moveTo(200,200);
-  ctx.quadraticCurveTo(160,250,200,300);
-  ctx.quadraticCurveTo(240,250,200,200);
+  ctx.moveTo(xTrans,yTrans);
+  ctx.quadraticCurveTo(xTrans-40,yTrans+50,xTrans,yTrans+100);
+  ctx.quadraticCurveTo(xTrans+40,yTrans+50,xTrans,yTrans);
 
   ctx.stroke();
 
@@ -36,9 +37,9 @@ function draw() {
   ctx.strokeStyle = 'rgba(0, 153, 255, 3)';
 
   ctx.save();
-  ctx.lineWidth = 10;
+  ctx.lineWidth = 4;
   ctx.translate(100, 100);
-  drawPic(ctx);
+  drawOval(ctx);
   ctx.restore();
 
 
