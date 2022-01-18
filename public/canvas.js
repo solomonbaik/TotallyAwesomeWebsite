@@ -10,8 +10,7 @@ function drawOval(ctx)
   {
     translation=20;
   }
-  ctx.translate(translation-75*Math.sin(frameNum/4), 0);
-
+  ctx.translate(translation-75*(Math.tanh(frameNum/5)), 0);
 
   //drawing oval
   var xTrans = 150;
@@ -22,9 +21,15 @@ function drawOval(ctx)
   ctx.quadraticCurveTo(xTrans+40,yTrans+50,xTrans,yTrans);
 
   ctx.stroke();
-
   ctx.restore();
+}
 
+function drawBigCircle(ctx)
+{
+  ctx.save();
+
+  ctx.stroke();
+  ctx.restore();
 }
 
 function draw() {
