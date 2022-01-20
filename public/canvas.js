@@ -1,8 +1,6 @@
 function drawOval(ctx)
 {
   ctx.save();
-  //var time2 = new Date();
-  //ctx.translate(time2.getSeconds(), 0);
   frameNum++;
   frameNum=frameNum%30;
   var translation = 0;
@@ -26,8 +24,12 @@ function drawOval(ctx)
 
 function drawBigCircle(ctx)
 {
+  ctx.moveTo(185,240);
   ctx.save();
+  var time2 = new Date();
 
+  //drawing circle
+  ctx.arc(185,240,150,(time2.getMilliseconds()/100)%(Math.PI*2),(time2.getMilliseconds()/170)%(Math.PI*2)+2);
   ctx.stroke();
   ctx.restore();
 }
@@ -45,6 +47,7 @@ function draw() {
   ctx.lineWidth = 4;
   ctx.translate(100, 100);
   drawOval(ctx);
+  drawBigCircle(ctx);
   ctx.restore();
 
 
