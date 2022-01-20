@@ -29,7 +29,7 @@ function drawBigCircle(ctx)
   var time2 = new Date();
 
   //drawing circle
-  ctx.arc(185,240,150,(time2.getMilliseconds()/100)%(Math.PI*2),(time2.getMilliseconds()/170)%(Math.PI*2)+2);
+  ctx.arc(185,240,150,(time2.getMilliseconds()/100)%(Math.PI*2),(2+time2.getMilliseconds()/170)%(Math.PI*2));
   ctx.stroke();
   ctx.restore();
 }
