@@ -97,4 +97,50 @@ document.getElementById("button4").addEventListener("click", function() {
   activateButton(4);
 });
 
+
+function draw(){
+  let canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    let ctx = canvas.getContext('2d');
+    ctx.globalCompositeOperation = 'destination-over';
+    //let time2 = new Date();
+  //  ctx.translate(0, time2.getSeconds()/30);
+    ctx.clearRect(0, 0, 1275, 500); // clear canvas
+    ctx.save();
+ var time2 = new Date();
+ ctx.translate(0, time2.getSeconds()/60);
+      let time = new Date();
+  drawTriangle();
+  ctx.ellipse(700, 200, 50, 100, 0, 0, Math.PI*2);
+  ctx.fill();
+  ctx.closePath();
+  ctx.ellipse(650,345,62,62,0,0,Math.PI*2);
+  ctx.fill();
+  ctx.save();
+  ctx.translate(700,300);
+  ctx.rotate(time.getSeconds()+ time.getMilliseconds() / 1000);
+  ctx.fillRect(0,0, 100, 100);
+
+         ctx.restore();
+   window.requestAnimationFrame(draw);
+}
+}
+
+function drawTriangle(){
+  if (canvas.getContext) {
+    let ctx = canvas.getContext('2d');
+  ctx.beginPath();
+    ctx.moveTo(700, 50);
+    ctx.lineTo(750, 100);
+    ctx.lineTo(650, 100);
+    ctx.fill();
+    ctx.closePath();
+  }
+}
+
+function startAnimation() {
+window.requestAnimationFrame(draw);
+}
+
+startAnimation();
 const arr = [];
