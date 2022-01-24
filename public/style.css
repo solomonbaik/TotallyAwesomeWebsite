@@ -1,0 +1,97 @@
+.instructions {
+  font-style: bold;
+  font-size: 28;
+}
+
+#linkcss {
+  background-color: pink;
+  color: blue;
+  width: 500px;
+}
+
+.video {
+  padding-right: 30px;
+  padding-bottom: 50px;
+}
+
+.everything {
+  display: flex;
+}
+
+.videotext {
+  width: 500px;
+}
+
+body {
+  background: url("https://wallpapercave.com/wp/wp3656598.jpg");
+  font: Serif;
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 70px;
+}
+
+.text-stuff {
+  color: white;
+  width: 500px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: cursive;
+  position: relative;
+  background-color: pink;
+}
+
+.score {
+  float: left;
+}
+
+.simoncss {
+  color: black;
+}
+
+.SimonSays {
+  height: 520px;
+  width: 440px;
+  padding-right: 30px;
+  padding-bottom: 90px;
+  padding-left: 70px;
+  color: black;
+  background-color: pink;
+  margin-left: 50px;
+}
+
+.clicked {
+  filter: brightness(150%);
+}
+
+.buttonclass1 {
+  background-color: #4CBB17;
+  height: 200px;
+  width: 200px;
+} /* Green */
+
+
+.buttonclass2 {
+  background-color: #87CEEB;
+  height: 200px;
+  width: 200px;
+} /* Blue */
+
+.buttonclass3 {
+  background-color: #fd5c63;
+  height: 200px;
+  width: 200px;
+} /* Red */
+
+
+.buttonclass4 {
+  background-color: #FFBF00;
+  height: 200px;
+  width: 200px;
+} /* Yellow */
+canvas {
+  background-color: white;
+  border-style: solid;
+}
